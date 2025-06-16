@@ -13,3 +13,7 @@ export function tryCatchWrapper(fn, context = '') {
     logError(error, context);
   }
 }
+export function handleError(error) {
+  console.error('HexaNest Error:', error);
+  // Optionally send to an error logging service
+}
