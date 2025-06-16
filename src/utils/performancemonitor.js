@@ -20,3 +20,14 @@ export function trackRenderTime(componentName) {
     console.log(`[Render Time] ${componentName}: ${(end - start).toFixed(2)}ms`);
   });
 }
+export function trackPerformance(label) {
+  if (performance && performance.mark) {
+    performance.mark(`${label}-start`);
+    setTimeout(() => {
+      performance.mark(`${label}-end`);
+      performance.measure(label, `${label}-start`, `${label}-end`);
+      const measure = performance.getEntriesByName(label)[0];
+      console.log(`${label} took ${measure.duration.toFixed(2)}ms`);
+    }, 0);
+  }
+}
