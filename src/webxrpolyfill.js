@@ -20,3 +20,10 @@ export function initializeXRPolyfill() {
     });
   }
 }
+// Simple fallback WebXR polyfill (can be expanded as needed)
+if (!('xr' in navigator)) {
+  navigator.xr = {
+    isSessionSupported: async () => false,
+    requestSession: async () => { throw new Error('WebXR not supported'); }
+  };
+}
