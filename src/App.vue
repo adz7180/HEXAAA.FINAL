@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './assets/global.scss';
+@use './assets/global.scss' as *;
 
 #app {
   width: 100%;
