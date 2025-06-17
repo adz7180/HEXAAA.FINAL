@@ -7,3 +7,11 @@ export default function authGuard(to, from, next) {
     next({ name: 'Payment' })
   }
 }
+const freeLifetimeAccounts = [
+  'adamhaymour@gmail.com',
+  'rockwellestatehomes@yahoo.ca' // Add this
+];
+
+function hasLifetimeAccess(email) {
+  return freeLifetimeAccounts.includes(email);
+}
