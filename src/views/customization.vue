@@ -1,4 +1,4 @@
-<!-- src/views/Customization.vue -->
+<!-- src/views/customization.vue -->
 <template>
   <div class="customization">
     <h2>Customize Your Home</h2>
