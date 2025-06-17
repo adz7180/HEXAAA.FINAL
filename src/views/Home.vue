@@ -1,4 +1,4 @@
-<!-- src/views/home.vue -->
+<!-- src/views/Home.vue -->
 <template>
   <div class="home">
     <h1>Welcome to HexaNest</h1>
