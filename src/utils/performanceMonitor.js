@@ -1,4 +1,4 @@
-// src/utils/performancemonitor.js
+// src/utils/performanceMonitor.js
 
 export function logPerformance() {
   if (performance && performance.getEntriesByType) {
