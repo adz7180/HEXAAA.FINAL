@@ -1,4 +1,4 @@
-// src/utils/errorhandler.js
+// src/utils/errorHandler.js
 
 export function logError(error, context = '') {
   console.error(`[HexaNest Error] ${context}:`, error);
