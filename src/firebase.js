@@ -14,9 +14,24 @@ const firebaseConfig = {
   measurementId: "G-3FDPF67LQC"
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
-const auth = firebaseApp.auth();
-const db = firebaseApp.firestore();
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
 
-export { auth, db };
+// Assign roles based on email
+export const checkUserRole = async (user) => {
+  const adminEmail = "adamhaymour@gmail.com";
+  const lifetimeFreeEmail = "rockwellestatehomes@yahoo.ca";
+
+  if (!user) return null;
+  const email = user.email;
+
+  if (email === adminEmail) return 'admin';
+  if (email === lifetimeFreeEmail) return 'free';
+  return 'standard';
+};
+
+export default firebase;
